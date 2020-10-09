@@ -73,6 +73,9 @@ export default {
       const _w = (path) => {
         const isFixedMd = catelogs[0].items.map(x => `/${x.path}`).includes(path)
         const { demoRouter } = iframe.value.contentWindow
+        if (!demoRouter) {
+          return
+        }
         if (isFixedMd) {
           if (demoRouter.currentRoute.value.path !== '/') {
             demoRouter.push('/')

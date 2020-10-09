@@ -10,6 +10,7 @@
   "dependencies": {
     "core-js": "^3.6.5",
     "tcon": "^1.0.10",
+    "vant": "^3.0.0-beta.3",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-0"
   },

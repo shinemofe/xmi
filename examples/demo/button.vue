@@ -1,6 +1,8 @@
 <template>
   <layout>
-    <div>button</div>
+    <div>
+      <xm-button>22</xm-button>
+    </div>
   </layout>
 </template>
 
