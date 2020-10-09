@@ -24,3 +24,9 @@ export const catelogs = [
     ]
   }
 ]
+
+export const info = {
+  title: 'Xmi',
+  desc: '讯盟小程序组件库(Vue3)',
+  logo: 'http://file.iming.work/32e0f78e1da19b305b8c.png'
+}

@@ -3,8 +3,8 @@
     <div class="van-doc-row">
       <div class="van-doc-header__top">
         <a class="van-doc-header__logo">
-          <img src="http://file.iming.work/32e0f78e1da19b305b8c.png">
-          <span>Xmi</span>
+          <img :src="info.logo">
+          <span>{{ info.title }}</span>
         </a>
         <ul class="van-doc-header__top-nav">
           <li class="van-doc-header__top-nav-item">
@@ -47,21 +47,53 @@
       <router-view/>
     </div>
   </div>
+
+  <div class="van-doc-simulator">
+    <iframe
+      :ref="(val) => iframe = val"
+      src="/demo.html"
+      class="height-100"
+      frameborder="0"
+      @load="doRouterSync"
+    />
+  </div>
 </template>
 
 <script>
-import { onBeforeMount, computed } from 'vue'
+import { computed, ref } from 'vue'
 import router from './router'
-import { catelogs } from './doc.config'
+import { catelogs, info } from './doc.config'
 
 export default {
   setup () {
-    onBeforeMount(() => {
-      // console.log(router.currentRoute.value)
-    })
+    const iframe = ref(null)
+
+    // 通知 demo 路由到同样的路由
+    const doRouterSync = () => {
+      const _w = (path) => {
+        const isFixedMd = catelogs[0].items.map(x => `/${x.path}`).includes(path)
+        const { demoRouter } = iframe.value.contentWindow
+        if (isFixedMd) {
+          if (demoRouter.currentRoute.value.path !== '/') {
+            demoRouter.push('/')
+          }
+        } else {
+          demoRouter.push(path)
+        }
+      }
+      router.beforeEach((to, from, next) => {
+        _w(to.path)
+        next()
+      })
+      _w(router.currentRoute.value.path)
+    }
+
     return {
       catelogs,
-      isIndex: computed(() => router.currentRoute.value.name === 'Home')
+      info,
+      iframe,
+      isIndex: computed(() => router.currentRoute.value.name === 'Home'),
+      doRouterSync
     }
   }
 }

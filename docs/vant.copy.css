@@ -40,10 +40,10 @@ a {
   width: 100%;
 }
 @media (min-width: 1680px) {
-.van-doc-row {
+  .van-doc-row {
     width: 1680px;
     margin: 0 auto;
-}
+  }
 }
 code {
   position: relative;
@@ -321,6 +321,41 @@ pre + p {
   opacity: 0;
 }
 
+.van-doc-simulator {
+  position: absolute;
+  top: 90px;
+  bottom: 10px;
+  right: 30px;
+  z-index: 1;
+  box-sizing: border-box;
+  width: 360px;
+  min-width: 360px;
+  overflow: hidden;
+  background: #fafafa;
+  border-radius: 12px;
+  box-shadow: #ebedf0 0 4px 12px;
+}
+@media (max-width: 1100px) {
+  .van-doc-simulator {
+    right: auto;
+    left: 750px;
+  }
+}
+@media (min-width: 1680px) {
+  .van-doc-simulator {
+    right: 50%;
+    margin-right: -800px;
+  }
+}
+.van-doc-simulator-fixed {
+  position: fixed;
+  top: 30px;
+}
+.van-doc-simulator iframe {
+  display: block;
+  width: 100%;
+}
+
 .van-doc-container {
   box-sizing: border-box;
   padding-left: 220px;
@@ -334,7 +369,7 @@ pre + p {
   position: relative;
   -webkit-box-flex: 1;
   -webkit-flex: 1;
-          flex: 1;
+  flex: 1;
   padding: 0 0 75px;
 }
 .van-doc-content .card {

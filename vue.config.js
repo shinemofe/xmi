@@ -6,6 +6,12 @@ module.exports = {
       outputDir: 'docs/dist/',
       template: 'docs/index.html',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
+    },
+    demo: {
+      entry: 'examples/main.js',
+      outputDir: 'examples/dist/',
+      template: 'examples/index.html',
+      chunks: ['chunk-vendors', 'chunk-common', 'demo']
     }
   },
   chainWebpack: config => {
@@ -24,6 +30,7 @@ module.exports = {
         .exclude
           .add(/node_modules/)
           .add(/docs/)
+          .add(/examples/)
           .add(/\.md/)
         .end()
       .use('eslint')
