@@ -65,7 +65,7 @@
     <iframe
       v-show="!vantPreviewUrl"
       :ref="(val) => iframe = val"
-      src="/demo.html"
+      src="/demo.html#/"
       class="height-100"
       frameborder="0"
       @load="doRouterSync"

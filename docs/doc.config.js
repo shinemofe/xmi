@@ -18,6 +18,10 @@ export const catelogs = [
     title: '基础组件',
     items: [
       {
+        path: 'color-block',
+        title: 'ColorBlock 色块'
+      },
+      {
         path: 'button',
         title: 'Button 按钮',
         vant: true
