@@ -20,9 +20,11 @@ module.exports = {
       .rule('eslint')
       .test(/\.(vue|(j|t)sx?)$/)
         .pre()
+        .enforce('pre')
         .exclude
-        .add(/node_modules/)
-        .add(/docs/)
+          .add(/node_modules/)
+          .add(/docs/)
+          .add(/\.md/)
         .end()
       .use('eslint')
         .loader('eslint-loader')

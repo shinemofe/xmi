@@ -4,21 +4,23 @@ export const catelogs = [
     items: [
       {
         path: 'home',
-        title: '介绍'
+        title: '介绍',
+        md: true
       },
       {
         path: 'quickstart',
-        title: '快速上手'
-      },
+        title: '快速上手',
+        md: true
+      }
+    ]
+  },
+  {
+    title: '基础组件',
+    items: [
+      {
+        path: 'button',
+        title: 'Button 按钮'
+      }
     ]
   }
-  // {
-  //   title: '基础组件',
-  //   items: [
-  //     {
-  //       path: 'demo-button',
-  //       title: 'DemoButton 按钮'
-  //     }
-  //   ]
-  // }
 ]
