@@ -19,7 +19,8 @@ export const catelogs = [
     items: [
       {
         path: 'button',
-        title: 'Button 按钮'
+        title: 'Button 按钮',
+        vant: true
       }
     ]
   }
