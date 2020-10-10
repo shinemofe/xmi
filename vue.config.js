@@ -22,9 +22,6 @@ module.exports = {
     loaderOptions: {
       less: {
         modifyVars: {
-          // 'text-color': 'red',
-          // 'border-color': 'blue'
-          // 或者可以通过 less 文件覆盖（文件路径为绝对路径）
           hack: `true; @import "${path.resolve(__dirname, 'xmi.theme.vant.less')}";`
         }
       }
@@ -42,34 +39,34 @@ module.exports = {
     config.module
       .rule('eslint')
       .test(/\.(vue|(j|t)sx?)$/)
-      .pre()
-      .enforce('pre')
-      .exclude
-      .add(/node_modules/)
-      .add(/docs/)
-      .add(/examples/)
-      .add(/vant-vue3-es/)
-      .add(/\.md/)
-      .end()
+        .pre()
+        .enforce('pre')
+        .exclude
+        .add(/node_modules/)
+        .add(/docs/)
+        .add(/examples/)
+        .add(/vant-vue3-es/)
+        .add(/\.md/)
+        .end()
       .use('eslint')
-      .loader('eslint-loader')
-      .options({
-        extensions: [
-          '.js',
-          '.jsx',
-          '.vue',
-          '.ts',
-          '.tsx'
-        ]
-      })
+        .loader('eslint-loader')
+        .options({
+          extensions: [
+            '.js',
+            '.jsx',
+            '.vue',
+            '.ts',
+            '.tsx'
+          ]
+        })
 
     config.module.rule('md')
       .test(/\.md$/)
-      .use('vue-loader-v16')
-      .loader('vue-loader-v16')
-      .end()
+        .use('vue-loader-v16')
+        .loader('vue-loader-v16')
+        .end()
       .use('@vant/markdown-loader')
-      .loader('@vant/markdown-loader')
-      .end()
+        .loader('@vant/markdown-loader')
+        .end()
   }
 }

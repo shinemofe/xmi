@@ -3,10 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "docs": "vue-cli-service serve",
-    "build": "vue-cli-service build",
+    "docs:dev": "vue-cli-service serve",
+    "docs:build": "vue-cli-service build",
+    "build": "node build/build.js",
     "lint": "vue-cli-service lint"
   },
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "types"
+  ],
   "dependencies": {
     "core-js": "^3.6.5",
     "tcon": "^1.0.10",
@@ -15,22 +23,36 @@
     "vue-router": "^4.0.0-0"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.11.0",
+    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
     "@vant/markdown-loader": "^2.3.0",
+    "@vue/babel-plugin-jsx": "^1.0.0-rc.3",
     "@vue/cli-plugin-babel": "~4.5.0",
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "@vue/compiler-sfc": "^3.0.0-0",
     "@vue/eslint-config-standard": "^5.1.2",
+    "autoprefixer": "^10.0.1",
     "babel-eslint": "^10.1.0",
+    "clean-css": "^4.2.3",
+    "cross-spawn": "^7.0.3",
+    "dependency-tree": "^7.2.1",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^7.0.0-0",
+    "fs-extra": "^9.0.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-loader-v16": "^16.0.0-beta.5.4"
+    "postcss": "^8.1.1",
+    "postcss-load-config": "^3.0.0",
+    "vue-loader-v16": "^16.0.0-beta.5.4",
+    "webpack": "^4.44.2",
+    "webpack-cli": "^3.3.12"
   }
 }

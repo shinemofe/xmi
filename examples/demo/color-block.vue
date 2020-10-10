@@ -1,7 +1,7 @@
 <template>
-  <layout>
+  <layout title="ColorBlock 色块">
     <div>
-      <p>color-block</p>
+      <xm-color-block />
     </div>
   </layout>
 </template>
