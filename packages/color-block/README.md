@@ -3,7 +3,7 @@
 ### 使用
 
 ```
-import { ColorBlock } from 'xmi'
+import { ColorBlock } from 'xmmp'
 ```
 
 ## 示例

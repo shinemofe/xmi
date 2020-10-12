@@ -27,6 +27,10 @@ export default {
         </div>
       )
     }
+  },
+
+  install (app) {
+    app.component(this.name, this)
   }
 }
 

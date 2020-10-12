@@ -6,6 +6,7 @@ const postcss = require('postcss')
 const postcssrc = require('postcss-load-config')
 const CleanCss = require('clean-css')
 const es = path.resolve(__dirname, '../es')
+const { tconModules } = require('../docs/doc.config')
 
 const cleanCss = new CleanCss()
 
@@ -24,11 +25,12 @@ const TildeResolverPlugin = {
 }
 
 module.exports = async function compile (filePath, name) {
+  const isEntryLess = name === ''
   const options = {
     filename: filePath,
     plugins: [TildeResolverPlugin]
   }
-  if (name === '') {
+  if (isEntryLess) {
     // 处理入口 less
     options.modifyVars = {
       hack: `true; @import "${path.resolve(__dirname, '../xmi.theme.vant.less')}";`
@@ -43,6 +45,18 @@ module.exports = async function compile (filePath, name) {
     from: undefined
   })
 
+  // 注入 tcon
+  if (isEntryLess) {
+    const tconCss = await Promise.all(
+      tconModules.map(x =>
+        fs.readFile(
+          path.resolve(__dirname, '../node_modules/tcon/dist', `${x}.css`),
+          'utf8'
+        )
+      )
+    )
+    result.css += `\n${tconCss.join('\n')}`
+  }
   const { styles } = cleanCss.minify(result.css)
   await fs.outputFile(path.join(es, name, 'index.css'), styles)
 }

@@ -1,28 +1,30 @@
 {
-  "name": "xmi",
-  "version": "0.1.0",
-  "private": true,
+  "name": "xmmp",
+  "version": "0.1.2",
+  "private": false,
   "scripts": {
     "docs:dev": "vue-cli-service serve",
     "docs:build": "vue-cli-service build",
     "build": "node build/build.js",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "release": "npm run build && node build/gen-component-style.js && node build/gen-entry.js && node build/build-entry.js"
   },
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
     "es",
     "lib",
+    "packages",
     "types"
   ],
   "dependencies": {
+    "vant": "^3.0.0-beta.3",
     "tcon": "^1.0.10"
   },
   "devDependencies": {
     "core-js": "^3.6.5",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-0",
-    "vant": "^3.0.0-beta.3",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",

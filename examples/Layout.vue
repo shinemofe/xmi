@@ -18,9 +18,9 @@ export default {
   setup () {
     return {
       handleBack () {
-        router.back()
+        router.push('/')
         // 通知 docs 也返回
-        window.top.docsRouter && window.top.docsRouter.back()
+        window.top.docsRouter && window.top.docsRouter.push('/home')
       }
     }
   }

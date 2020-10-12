@@ -133,7 +133,7 @@ export default {
     const handleBack = () => {
       const { demoRouter } = iframe.value.contentWindow
       if (demoRouter) {
-        demoRouter.back()
+        demoRouter.push('/')
       }
       router.push('/')
     }

@@ -7,6 +7,7 @@ module.exports = {
   entry: jsPath,
   output: {
     filename: 'index.js',
-    path: lib
+    path: lib,
+    libraryTarget: 'commonjs2'
   }
 }
