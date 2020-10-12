@@ -1,3 +1,32 @@
+export default {
+  name: 'xm-color-block',
+
+  props: {
+    blocks: {
+      type: Array,
+      default: () => []
+    }
+  },
+
+  setup (props, context) {
+    return () => {
+      const flexWrap = !!props.blocks[0].width
+      const cls = [
+        'flex justify-between mt10',
+        {
+          'flex-wrap': flexWrap
+        }
+      ]
+
+      return (
+        <div class={cls}>
+          {renderItem(props.blocks, context.slots)}
+        </div>
+      )
+    }
+  }
+}
+
 function renderItem (list, slots) {
   const baseCls = 'flex c-fff ptb10 mb10 br4'
   return list.map((item, i) => {
@@ -61,33 +90,4 @@ function renderItemIcon (item) {
       </div>
     </>
   )
-}
-
-export default {
-  name: 'xm-color-block',
-
-  props: {
-    blocks: {
-      type: Array,
-      default: () => []
-    }
-  },
-
-  setup (props, context) {
-    return () => {
-      const flexWrap = !!props.blocks[0].width
-      const cls = [
-        'flex justify-between mt10',
-        {
-          'flex-wrap': flexWrap
-        }
-      ]
-
-      return (
-        <div class={cls}>
-          {renderItem(props.blocks, context.slots)}
-        </div>
-      )
-    }
-  }
 }
