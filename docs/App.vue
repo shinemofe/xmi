@@ -17,7 +17,12 @@
     </div>
   </div>
 
-  <div class="van-doc-nav" style="top: 60px; bottom: 0px;">
+  <div
+    class="van-doc-nav"
+    :class="{
+      'van-doc-nav__fixed': scrollFixed
+    }"
+  >
     <div
       v-for="(item, i) in catelogs"
       :key="i"
@@ -48,7 +53,12 @@
     </div>
   </div>
 
-  <div class="van-doc-simulator">
+  <div
+    class="van-doc-simulator"
+    :class="{
+      'van-doc-simulator__fixed': scrollFixed
+    }"
+  >
     <iframe
       v-show="vantPreviewUrl"
       :src="vantPreviewUrl"
@@ -74,13 +84,14 @@
 </template>
 
 <script>
-import { computed, ref } from 'vue'
+import { computed, ref, onMounted } from 'vue'
 import router from './router'
 import { catelogs, info } from './doc.config'
 
 export default {
   setup () {
     const iframe = ref(null)
+    const scrollFixed = ref(false)
     const vantPreviewUrl = computed(() => {
       const { path } = router.currentRoute.value
       const isVant = catelogs.some(x => {
@@ -88,6 +99,12 @@ export default {
         return it && it.vant
       })
       return isVant ? `https://youzan.github.io/vant/mobile.html#/zh-CN${path}` : ''
+    })
+
+    onMounted(() => {
+      window.onscroll = () => {
+        scrollFixed.value = document.documentElement.scrollTop >= 70
+      }
     })
 
     // 通知 demo 路由到同样的路由
@@ -123,6 +140,7 @@ export default {
 
     return {
       catelogs,
+      scrollFixed,
       info,
       iframe,
       doRouterSync,
