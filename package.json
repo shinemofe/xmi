@@ -16,13 +16,13 @@
     "types"
   ],
   "dependencies": {
-    "core-js": "^3.6.5",
-    "tcon": "^1.0.10",
-    "vant": "^3.0.0-beta.3",
-    "vue": "^3.0.0-0",
-    "vue-router": "^4.0.0-0"
+    "tcon": "^1.0.10"
   },
   "devDependencies": {
+    "core-js": "^3.6.5",
+    "vue": "^3.0.0-0",
+    "vue-router": "^4.0.0-0",
+    "vant": "^3.0.0-beta.3",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",

@@ -361,6 +361,12 @@ pre + p {
   padding-left: 220px;
   overflow: hidden;
 }
+@media (min-width: 1680px) {
+  .van-doc-container {
+    width: 1680px;
+    margin: 0 auto;
+  }
+}
 .van-doc-container--with-simulator {
   padding-right: 390px;
 }

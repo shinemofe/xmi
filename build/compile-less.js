@@ -38,7 +38,7 @@ module.exports = async function compile (filePath, name) {
   const source = readFileSync(filePath, 'utf-8')
   const { css } = await render(source, options)
 
-  const config = await postcssrc({}, path.resolve(__dirname, '../postcss.config.js'))
+  const config = await postcssrc({}, path.resolve(__dirname, './postcss.config.js'))
   const result = await postcss(config.plugins).process(css, {
     from: undefined
   })

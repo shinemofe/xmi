@@ -3,6 +3,7 @@ const { pathExistsSync, outputFileSync } = require('fs-extra')
 const dependencyTree = require('dependency-tree')
 const pkg = path.resolve(__dirname, '../packages')
 const es = path.resolve(__dirname, '../es')
+const { tconModules } = require('../docs/doc.config')
 
 function getDepName (obj, res = []) {
   Object.keys(obj).forEach(p => {
@@ -29,6 +30,10 @@ module.exports = ({ file, name }) => {
     if (pathExistsSync(path.join(es, component, 'index.css'))) {
       return `require('${component === name ? '../index.css' : `../../${component}/index.css`}')`
     }
-  }).filter(Boolean).join('\n')
-  outputFileSync(path.join(es, name, 'style/index.js'), content)
+  }).filter(Boolean)
+
+  // 插入 tcon
+  Array.prototype.unshift.apply(content, tconModules.map(x => `require('tcon/dist/${x}.css')`))
+
+  outputFileSync(path.join(es, name, 'style/index.js'), content.join('\n'))
 }
