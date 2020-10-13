@@ -13,10 +13,12 @@
 
 <script>
 import Layout from '../Layout'
+import XmColorBlock from '../../packages/color-block'
 
 export default {
   components: {
-    Layout
+    Layout,
+    XmColorBlock
   },
 
   data () {

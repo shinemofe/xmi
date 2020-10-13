@@ -48,6 +48,10 @@ export default {
         { !!props.size && renderMore(show) }
       </div>
     )
+  },
+
+  install (app) {
+    app.component(this.name, this)
   }
 }
 

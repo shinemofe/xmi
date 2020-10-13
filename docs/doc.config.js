@@ -38,6 +38,15 @@ module.exports ={
           vant: true
         }
       ]
+    },
+    {
+      title: '小程序业务',
+      items: [
+        {
+          path: 'card',
+          title: 'Card 卡片面板'
+        }
+      ]
     }
   ]
 }

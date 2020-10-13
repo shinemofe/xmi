@@ -15,10 +15,12 @@
 
 <script>
 import Layout from '../Layout'
+import XmTable from '../../packages/table'
 
 export default {
   components: {
-    Layout
+    Layout,
+    XmTable
   },
 
   data () {
