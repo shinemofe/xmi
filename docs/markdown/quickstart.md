@@ -2,27 +2,41 @@
 
 ### 安装
 
+```
+# yarn
+yarn add xmmp
+
+# npm
+npm i xmmp -S
+```
+
+请注意
+
 > 本组件库内置安装了 vant@next ，且全局注册，所以你的项目无需额外安装 vant
 
-安装分为 2 种情况：
+### 使用官方模版
 
-- 使用讯盟 App 作为容器的应用
-- 非讯盟 App 的外部容器
+模版初始化了所有依赖项，无需额外配置。
 
-#### 1.使用系统模版
-
-无需手动安装，通过 xmmp 初始化的小程序应用模版已内置
-
-#### 2.项目单独安装
+第一步，先安装官方脚手架工具 `xmmp-cli`
 
 ```
-yarn add xmmp
-# npm i xmmp -S
+yarn global add xmmp-cli
+
+# npm
+npm i xmmp-cli -g
 ```
+
+第二步，初始化小程序模版
+
+```
+xmmp create mp2 <ProjectName>
+```
+
 
 ## 引入组件库
 
-### 方式一. 按需引入 (推荐)
+### 方式一. 按需引入 
 
 [babel-plugin-import](https://github.com/ant-design/babel-plugin-import) 是一款 babel 插件，它会在编译过程中将 import 的写法自动转换为按需引入的方式。
 
@@ -62,7 +76,7 @@ module.exports = {
 import { ColorBlock } from 'xmmp';
 ```
 
-### 方式二. 讯盟App私有协议引入
+### 方式二. 讯盟App私有协议引入(推荐)
 
 在项目模版文件`index.html`中引入
 

@@ -1,5 +1,4 @@
-const vw = num => /\d/.test(num) ? `${(num / 3.75).toFixed(2)}vw` : undefined
-const unitSize = param => /px/.test(param) ? param : vw(param)
+import { unitSize, vw } from '../utils/util'
 
 export default {
   name: 'xm-color-block',

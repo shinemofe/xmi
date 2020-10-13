@@ -10,15 +10,23 @@ const utils = {
     catelogs.forEach(group => {
       group.items.forEach(item => {
         if (!item.md && !item.vant) {
+          const dir = path.join(pkgs, item.path)
           components.push({
-            file: path.resolve(pkgs, item.path, 'index.jsx'),
-            style: path.resolve(pkgs, item.path, 'index.less'),
+            dir,
+            file: path.join(dir, 'index.jsx'),
+            style: path.join(dir, 'index.less'),
             name: item.path
           })
         }
       })
     })
     return components
+  },
+  getFixed: () => {
+    return ['utils'].map(x => ({
+      dir: path.join(pkgs, x),
+      name: x
+    }))
   }
 }
 
