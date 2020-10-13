@@ -8,7 +8,7 @@
         </a>
         <ul class="van-doc-header__top-nav">
           <li class="van-doc-header__top-nav-item">
-            <a target="_blank" href="https://github.com/shinemofe/xmmp-ui" class="van-doc-header__logo-link">
+            <a target="_blank" href="https://github.com/shinemofe/xmi" class="van-doc-header__logo-link">
               <img src="https://b.yzcdn.cn/vant/logo/github.svg">
             </a>
           </li>
