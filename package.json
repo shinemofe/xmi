@@ -1,6 +1,6 @@
 {
   "name": "xmmp",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "private": false,
   "scripts": {
     "docs:dev": "vue-cli-service serve",
@@ -14,7 +14,7 @@
   "files": [
     "es",
     "lib",
-    "packages/style",
+    "packages/**/*.less",
     "types"
   ],
   "dependencies": {
