@@ -6,6 +6,7 @@ import { tconModules } from '../docs/doc.config'
 tconModules.forEach(x => {
   require(`tcon/dist/${x}.css`)
 })
+import '../packages/style/index.less'
 
 const app = createApp(App)
 

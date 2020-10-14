@@ -14,7 +14,7 @@
   "files": [
     "es",
     "lib",
-    "packages",
+    "packages/style",
     "types"
   ],
   "dependencies": {

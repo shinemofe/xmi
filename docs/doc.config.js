@@ -31,10 +31,20 @@ module.exports ={
         {
           path: 'table',
           title: 'Table 表格'
+        }
+      ]
+    },
+    {
+      title: 'Vant 组件',
+      items: [
+        {
+          path: 'van-button',
+          title: 'Button 按钮',
+          vant: true
         },
         {
-          path: 'button',
-          title: 'Button 按钮',
+          path: 'van-tab',
+          title: 'Tab 导航',
           vant: true
         }
       ]

@@ -1,24 +1,12 @@
-# xmi
+# xmmp
 
-## Project setup
-```
-npm install
-```
+讯盟小程序组件 (Vue3)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+### 代码贡献
 
-### Compiles and minifies for production
-```
-npm run build
-```
+新增 vant 修改的组件：
 
-### Lints and fixes files
-```
-npm run lint
-```
+- 修改 `xmi.theme.vant.less` 主题配置
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+新增全新组件：`packages`
+

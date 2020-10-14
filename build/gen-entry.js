@@ -34,7 +34,10 @@ const css = components.map(({ name, style }) => {
 // 注入依赖
 Array.prototype.unshift.apply(
   css,
-  ['@import "~vant/lib/index.less";'].concat(tconModules.map(x => `@import "~tcon/dist/${x}.css";`))
+  [
+    '@import "~vant/lib/index.less";',
+    '@import "../packages/style/index.less";'
+  ].concat(tconModules.map(x => `@import "~tcon/dist/${x}.css";`))
 )
 
 fs.outputFileSync(jsPath, js)
