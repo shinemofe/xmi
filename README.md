@@ -1,6 +1,9 @@
 # xmmp
 
-讯盟小程序组件 (Vue3)
+从零开始撸一套 Vue3 组件库
+
+
+实现细节：[从零开始撸一套 Vue3 组件库](https://iming.work/detail/5f814d8da0dfbd512014726b)
 
 ### 代码贡献
 
