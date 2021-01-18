@@ -1,5 +1,5 @@
 <div class="xmi-doc__intro tc card">
-  <img src="http://file.iming.work/32e0f78e1da19b305b8c.png" style="width:100px">
+  <img src="https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png" style="width:100px">
   <p class="mt20 mb10" style="font-size: 42px">Xmmp</p>
   <p class="c-666 f14">讯盟小程序组件库(Vue3)</p>
 </div>
