@@ -24,7 +24,7 @@ const TildeResolverPlugin = {
   }
 }
 
-module.exports = async function compile (filePath, name) {
+module.exports = async function compile (filePath, name, code) {
   const isEntryLess = name === ''
   const options = {
     filename: filePath,
@@ -37,7 +37,7 @@ module.exports = async function compile (filePath, name) {
     }
   }
 
-  const source = readFileSync(filePath, 'utf-8')
+  const source = code || readFileSync(filePath, 'utf-8')
   const { css } = await render(source, options)
 
   const config = await postcssrc({}, path.resolve(__dirname, './postcss.config.js'))

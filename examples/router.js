@@ -1,5 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { catelogs } from '../docs/doc.config'
+import { catelogs } from '@/doc.config'
 
 const routes = [
   {

@@ -1,6 +1,6 @@
 const { getComponents, getFixed } = require('./utils')
-const buildJs = require('./build-jsx')
-const buildCss = require('./build-less')
+const buildComponent = require('./build-component')
+const genStyle = require('./gen-style')
 
 const components = getComponents()
 const args = process.argv
@@ -24,7 +24,7 @@ if (processComponents.length) {
   console.log(`共 ${processComponents.length} 个组件待处理`)
   const jsArr = getFixed().concat(processComponents)
 
-  Promise.all([buildJs(jsArr), buildCss(processComponents)]).then(() => {
+  buildComponent(jsArr).then(() => genStyle(processComponents)).then(() => {
     console.log('全部完成\n')
   })
 }
