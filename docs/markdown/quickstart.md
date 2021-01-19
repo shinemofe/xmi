@@ -76,7 +76,7 @@ module.exports = {
 import { ColorBlock } from 'xmmp';
 ```
 
-### 方式二. 讯盟App私有协议引入(推荐)
+### 方式二. App私有协议引入(推荐)
 
 在项目模版文件`index.html`中引入
 

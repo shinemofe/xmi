@@ -1,7 +1,7 @@
 module.exports ={
   info: {
     title: 'Xmmp',
-    desc: '讯盟小程序组件库(Vue3)',
+    desc: 'Vue3 组件库',
     logo: 'https://user-images.githubusercontent.com/9743418/104887549-680c1e80-59a6-11eb-8222-40e1d38a0fe2.png'
   },
   tconModules: ['layout', 'color', 'size', 'text', 'reset'],
