@@ -7,7 +7,7 @@
     "docs:build": "vue-cli-service build",
     "build": "node build/build.js",
     "lint": "vue-cli-service lint",
-    "release": "npm run build && node build/gen-component-style.js && node build/gen-entry.js && node build/build-entry.js"
+    "release": "npm run build && node build/gen-entry.js && node build/build-entry.js"
   },
   "main": "lib/index.js",
   "module": "es/index.js",

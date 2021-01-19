@@ -27,7 +27,7 @@ export default {
 
 const css = components.map(({ name, style }) => {
   if (fs.pathExistsSync(style)) {
-    return `@import "../packages/${name}/index.less";`
+    return `@import "../src/${name}/index.less";`
   }
 }).filter(Boolean)
 
