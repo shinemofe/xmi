@@ -62,8 +62,8 @@ module.exports = {
 
     config.module.rule('md')
       .test(/\.md$/)
-        .use('vue-loader-v16')
-        .loader('vue-loader-v16')
+        .use('vue-loader')
+        .loader('vue-loader')
         .end()
       .use('@vant/markdown-loader')
         .loader('@vant/markdown-loader')
