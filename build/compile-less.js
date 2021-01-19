@@ -6,7 +6,7 @@ const postcss = require('postcss')
 const postcssrc = require('postcss-load-config')
 const CleanCss = require('clean-css')
 const es = path.resolve(__dirname, '../es')
-const { tconModules } = require('../docs/doc.config')
+const { tconModules } = require('../doc.config')
 
 const cleanCss = new CleanCss()
 

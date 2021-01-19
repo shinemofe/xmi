@@ -16,7 +16,7 @@ async function doParse (file, name) {
   const hasScoped = descriptor.styles.some((s) => s.scoped)
   let scopedId = hasScoped ? `data-v-${hash(source)}` : undefined
   const template = compileTemplate({
-    id: scopedId,
+    id: scopedId || hash(source),
     source: descriptor.template.content,
     filename: name
   })

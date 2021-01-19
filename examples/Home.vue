@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import { catelogs, info } from '../docs/doc.config'
+import { catelogs, info } from '../doc.config'
 
 export default {
   setup () {

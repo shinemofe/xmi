@@ -6,7 +6,7 @@ export default {
   props: {
     blocks: {
       type: Array,
-      default: () => []
+      default: () => ([])
     }
   },
 

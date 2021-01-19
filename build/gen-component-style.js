@@ -1,9 +1,9 @@
 const path = require('path')
 const { pathExistsSync, outputFileSync } = require('fs-extra')
 const dependencyTree = require('dependency-tree')
-const pkg = path.resolve(__dirname, '../packages')
+const pkg = path.resolve(__dirname, '../src')
 const es = path.resolve(__dirname, '../es')
-const { tconModules } = require('../docs/doc.config')
+const { tconModules } = require('../doc.config')
 
 function getDepName (obj, res = []) {
   Object.keys(obj).forEach(p => {
@@ -26,6 +26,9 @@ function dependency (file) {
 
 module.exports = ({ file, name }) => {
   const deps = dependency(file)
+  if (deps.length === 0) {
+    deps.push(name)
+  }
   const content = deps.map(component => {
     if (pathExistsSync(path.join(es, component, 'index.css'))) {
       return `require('${component === name ? '../index.css' : `../../${component}/index.css`}')`

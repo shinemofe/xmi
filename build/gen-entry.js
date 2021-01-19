@@ -2,7 +2,7 @@ const path = require('path')
 const { version } = require(path.resolve(__dirname, '../package.json'))
 const fs = require('fs-extra')
 const { getComponents, nameToCamel } = require('./utils')
-const { tconModules } = require('../docs/doc.config')
+const { tconModules } = require('../doc.config')
 
 const components = getComponents()
 const es = path.resolve(__dirname, '../es')
@@ -36,7 +36,7 @@ Array.prototype.unshift.apply(
   css,
   [
     '@import "~vant/lib/index.less";',
-    '@import "../packages/style/index.less";'
+    '@import "../src/style/index.less";'
   ].concat(tconModules.map(x => `@import "~tcon/dist/${x}.css";`))
 )
 

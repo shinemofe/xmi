@@ -14,18 +14,20 @@
   "files": [
     "es",
     "lib",
-    "packages/**/*.less",
+    "src/**/*.less",
     "types"
   ],
   "dependencies": {
+    "@babel/runtime": "^7.12.5",
     "tcon": "^1.0.10",
     "vant": "3.0.4"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.12.11",
     "@babel/core": "^7.11.6",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.10.4",
     "@babel/plugin-proposal-optional-chaining": "^7.11.0",
-    "@babel/plugin-transform-modules-commonjs": "^7.10.4",
+    "@babel/plugin-transform-runtime": "^7.12.10",
     "@vant/markdown-loader": "^2.3.0",
     "@vue/babel-plugin-jsx": "^1.0.0-rc.3",
     "@vue/cli-plugin-babel": "~4.5.0",

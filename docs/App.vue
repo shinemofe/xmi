@@ -87,7 +87,7 @@
 <script>
 import { computed, ref, onMounted } from 'vue'
 import router from './router'
-import { catelogs, info } from './doc.config'
+import { catelogs, info } from '../doc.config'
 
 export default {
   setup () {

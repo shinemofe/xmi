@@ -1,4 +1,4 @@
-module.exports ={
+module.exports = {
   info: {
     title: 'Xmmp',
     desc: 'Vue3 组件库',

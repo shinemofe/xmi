@@ -2,11 +2,11 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './vant.copy.css'
-import { tconModules } from '../docs/doc.config'
+import { tconModules } from '../doc.config'
 tconModules.forEach(x => {
   require(`tcon/dist/${x}.css`)
 })
-import '../packages/style/index.less'
+import '../src/style/index.less'
 
 const app = createApp(App)
 

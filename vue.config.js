@@ -31,7 +31,7 @@ module.exports = {
   chainWebpack: config => {
     config.resolve.alias
       .set('@', `${__dirname}/docs`)
-      .set('@@', `${__dirname}/packages`)
+      .set('@@', `${__dirname}/src`)
       .end()
 
     config.module.rules.delete('eslint')

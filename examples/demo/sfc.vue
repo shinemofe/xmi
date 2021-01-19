@@ -6,7 +6,7 @@
 
 <script>
 import Layout from '../Layout'
-import MSfc from '../../packages/sfc'
+import MSfc from '../../src/sfc'
 
 export default {
   name: 'demo-sfc',

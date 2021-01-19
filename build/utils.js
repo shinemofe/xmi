@@ -1,6 +1,6 @@
 const path = require('path')
-const { catelogs } = require('../docs/doc.config')
-const pkgs = path.resolve(__dirname, '../packages')
+const { catelogs } = require('../doc.config')
+const pkgs = path.resolve(__dirname, '../src')
 
 const utils = {
   upperFirst: str => str[0].toUpperCase() + str.substr(1),

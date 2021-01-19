@@ -15,7 +15,7 @@
 
 <script>
 import Layout from '../Layout'
-import XmTable from '../../packages/table'
+import XmTable from '../../src/table'
 
 export default {
   components: {
@@ -77,4 +77,4 @@ export default {
 }
 </script>
 
-<style lang="less" src="../../packages/table/index.less"></style>
+<style lang="less" src="../../src/table/index.less"></style>
